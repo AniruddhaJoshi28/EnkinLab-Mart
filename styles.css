@@ -1,0 +1,129 @@
+/* ===== Reset & Base ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #001f3f, #096cce);
+  color: #f1f1f1;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px);
+}
+.navbar .nav-link {
+  color: #ffffff !important;
+  transition: color 0.2s ease;
+}
+.navbar .nav-link:hover {
+  color: #0dcaf0 !important;
+}
+
+/* ===== Product Cards ===== */
+.product-card {
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  background: none !important;
+  filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.35));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.product-card img:hover {
+  transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+  filter: drop-shadow(0px 15px 20px rgba(0,0,0,0.45));
+}
+
+/* ===== Cart Items ===== */
+.cart-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: none;
+}
+
+/* ===== Glass Cards (orders/checkout) ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border: none;
+}
+.list-item-glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+}
+.btn-info {
+  background-color: #0dcaf0;
+  border: none;
+}
+.btn-info:hover {
+  background-color: #0bb7db;
+}
+
+/* Ripple Effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255,255,255,0.6);
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  animation: rippleAnim 0.6s linear;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ===== Loader ===== */
+#loader {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+}
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* ===== Toasts ===== */
+#toastContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2500;
+}
